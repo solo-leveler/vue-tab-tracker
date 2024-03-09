@@ -1,11 +1,21 @@
 <template>
     <div>
         <h1> Register</h1>
-        <input type="email" v-model="email" name="email" id="email" placeholder="email">
-        <br>
-        <input type="password" v-model="password" name="password" id="password" placeholder="password">
-        <br>
-        <button type="submit">Register</button>
+        <form
+          name="tab-tracker-form"
+          autocomplete="off">
+          <v-text-field
+            label="Email"
+            v-model="email"
+          ></v-text-field>
+          <br>
+          <v-text-field
+            label="Password"
+            type="password"
+            v-model="password"
+            autocomplete="new-password"
+          ></v-text-field>
+        </form>
     </div>
 </template>
 
