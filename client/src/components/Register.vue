@@ -1,6 +1,6 @@
 <template>
   <v-container fluid column>
-    <v-fle xs6 offset-x3>
+    <v-flex xs6 offset-x3>
       <div class="white-elevation-2">
         <v-toolbar flat dense class="cyan" dark>
           <v-toolbar-title>Register</v-toolbar-title>
@@ -32,7 +32,7 @@
           Register
         </v-btn>
       </div>
-    </v-fle>
+    </v-flex>
   </v-container>
 </template>
 
