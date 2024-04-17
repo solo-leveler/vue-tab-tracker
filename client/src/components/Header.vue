@@ -1,7 +1,9 @@
 <template>
     <v-toolbar fixed class="cyan">
         <v-toolbar-title class="mr-4">
-            TabTracker
+            <v-btn flat dark to="/">
+                TabTracker
+            </v-btn>
         </v-toolbar-title>
         <v-toolbar-items>
             <v-btn flat dark>
@@ -10,7 +12,10 @@
         </v-toolbar-items>
         <v-spacer></v-spacer>
         <v-toolbar-items>
-            <v-btn flat dark>
+            <v-btn flat dark to="register">
+                Login
+            </v-btn>
+            <v-btn flat dark to="login">
                 Sign Up
             </v-btn>
         </v-toolbar-items>
