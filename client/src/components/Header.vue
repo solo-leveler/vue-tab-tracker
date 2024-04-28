@@ -6,7 +6,7 @@
             </v-btn>
         </v-toolbar-title>
         <v-toolbar-items>
-            <v-btn flat dark>
+            <v-btn flat dark to="songs">
                 Browse
             </v-btn>
         </v-toolbar-items>
