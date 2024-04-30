@@ -7,6 +7,7 @@ export default new Vuex.Store({
   strict: true,
   state: {
     token: null,
+    SpotToken: null,
     user: null,
     isUserLoggedIn: false
   },
@@ -21,6 +22,9 @@ export default new Vuex.Store({
     },
     setUser (state, user) {
       state.User = user
+    },
+    setSpotToken (state, token) {
+      state.SpotToken = token
     }
   },
   actions: {
@@ -29,6 +33,9 @@ export default new Vuex.Store({
     },
     setUser ({commit}, user) {
       commit('setUser', user)
+    },
+    setTokenForSongs ({commit}, token) {
+      commit('setSpotToken', token)
     }
   }
 })
