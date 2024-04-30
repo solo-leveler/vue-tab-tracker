@@ -30,7 +30,7 @@ module.exports = {
         Authorization: `Bearer ${accessToken}`
       }
     }).then(response => {
-      return response.data
+      return response.data.albums.items
     })
       .catch(error => {
         console.error('Error:', error)
