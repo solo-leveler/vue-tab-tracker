@@ -14,10 +14,23 @@
 
 <script>
 import PageHeader from '@/components/Header.vue'
+import songService from './services/songService'
 export default {
   name: 'App',
   components: {
     PageHeader
+  },
+  mounted: async function () {
+    try {
+      const response = await songService.getToken()
+      if (response && response.access_token) {
+        this.$store.dispatch('setTokenForSongs', response.access_token)
+      } else {
+        console.error('Failed to get access token:', response)
+      }
+    } catch (error) {
+      console.error('Error:', error.message)
+    }
   }
 }
 </script>
