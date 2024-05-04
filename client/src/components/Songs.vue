@@ -1,46 +1,42 @@
-<template lang="">
+<template>
   <v-layout justify-center>
-    <v-flex xs7 offset-x3>
-      <div class="white-elevation-2">
-        <v-toolbar flat dense class="cyan" dark>
+    <v-container fluid grid-list-md>
+      <v-toolbar flat dense class="cyan mb-3" dark>
           <v-toolbar-title>Songs</v-toolbar-title>
-        </v-toolbar>
-        <div v-for="song in songs" :key="song.id">
-          <v-layout class="pa-3">
-            <v-flex xs6>
-            <div class="song-title">
-              {{ song.name }}
-            </div>
-            <div
-              v-for="item in song.artists"
-              :key="item.id"
-              class="song-artist"
-            >
-              {{ item.name }}
-            </div>
-            <div class="song-genre">
-              {{ song.genre }}
-            </div>
-
-            <!-- <v-btn
-                  dark
-                  class="cyan"
-                  :to="{
-                    name: 'song',
-                    params: {
-                      songId: song.id
-                    }
-                  }">
-                  View
-                </v-btn> -->
-              </v-flex>
-              <v-flex xs6>
-                <img class="album-image" :src="song.images[0].url" />
-              </v-flex>
-            </v-layout>
-          </div>
-      </div>
-    </v-flex>
+          <v-spacer></v-spacer>
+          <v-toolbar-items>
+            <v-text-field
+              append-icon="mdi-magnify"
+              hide-details
+              single-line
+            ></v-text-field>
+          </v-toolbar-items>
+      </v-toolbar>
+      <v-layout row wrap>
+          <v-flex v-for="item in songs" :key="item.id" xs12 md6 lg3>
+              <v-card hover width="95%">
+                  <v-card-media fill-height :src="item.images[0].url" height="300px"></v-card-media>
+                  <v-card-title primary-title>
+                      <div>
+                          <h3 class="headline mb-0" v-text="item.name"></h3>
+                      </div>
+                  </v-card-title>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn icon>
+                      <v-icon>favorite</v-icon>
+                    </v-btn>
+                    <v-btn icon>
+                      <v-icon>bookmark</v-icon>
+                    </v-btn>
+                    <v-btn icon>
+                      <v-icon>share</v-icon>
+                    </v-btn>
+                  </v-card-actions>
+              </v-card>
+          </v-flex>
+      </v-layout>
+  </v-container>
   </v-layout>
 </template>
 <script>
