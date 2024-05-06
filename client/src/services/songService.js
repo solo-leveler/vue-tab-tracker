@@ -36,6 +36,19 @@ module.exports = {
         console.error('Error:', error)
         throw new Error('Failed to fetch new releases from Spotify API')
       })
+  },
+  getAvailableGenreSeeds (accessToken) {
+    return axios.get('https://api.spotify.com/v1/recommendations/available-genre-seeds', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    }).then(response => {
+      return response.data.genre
+    })
+      .catch(error => {
+        console.error('Error:', error)
+        throw new Error('Failed to fetch new releases from Spotify API')
+      })
   }
 }
 
