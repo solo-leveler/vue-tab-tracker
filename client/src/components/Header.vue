@@ -1,8 +1,8 @@
 <template>
-    <v-toolbar fixed class="cyan">
+    <v-toolbar color="cyan" dark tabs fixed>
         <v-toolbar-title class="mr-4">
-            <v-btn flat dark to="/">
-                TabTracker
+            <v-btn to="/" icon>
+                <v-icon>home</v-icon>
             </v-btn>
         </v-toolbar-title>
         <v-toolbar-items>
